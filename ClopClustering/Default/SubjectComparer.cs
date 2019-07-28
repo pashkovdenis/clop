@@ -7,7 +7,6 @@ namespace ClopClustering.Default
 {
     public sealed class SubjectComparer : IAttributeComparer
     {
-        public bool Compare(ISubjectAttribute a, ISubjectAttribute b) => a.Label == b.Label;
-
+        public bool Compare(ISubjectAttribute a, ISubjectAttribute b) => a.Label == b.Label; 
     }
 }

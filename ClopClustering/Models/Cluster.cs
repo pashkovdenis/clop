@@ -19,7 +19,14 @@ namespace ClopClustering.Models
             Description = description;
             Subjects = new ConcurrentBag<Subject<D>>();
             Width = Height = 1;
-        } 
+        }
+
+        public Cluster(string description, IEnumerable<Subject<D>> subjects) : this(description)
+        {
+
+
+        }
+
         public override string ToString() => $"Cluster {Description}";
         public IEnumerator<Subject<D>> GetEnumerator() => Subjects.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator(); 
