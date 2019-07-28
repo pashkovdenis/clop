@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Desktop\\CLop\\Sample\\Sample.csproj": {}
+    "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\Sample\\Sample.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Desktop\\CLop\\ClopClustering\\ClopClustering.csproj": {
+    "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\ClopClustering\\ClopClustering.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\CLop\\ClopClustering\\ClopClustering.csproj",
+        "projectUniqueName": "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\ClopClustering\\ClopClustering.csproj",
         "projectName": "ClopClustering",
-        "projectPath": "C:\\Users\\User\\Desktop\\CLop\\ClopClustering\\ClopClustering.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\CLop\\ClopClustering\\obj\\",
+        "projectPath": "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\ClopClustering\\ClopClustering.csproj",
+        "packagesPath": "C:\\Users\\S.Dobranos\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\ClopClustering\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\S.Dobranos\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -58,21 +58,21 @@
         }
       }
     },
-    "C:\\Users\\User\\Desktop\\CLop\\Sample\\Sample.csproj": {
+    "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\Sample\\Sample.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Desktop\\CLop\\Sample\\Sample.csproj",
+        "projectUniqueName": "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\Sample\\Sample.csproj",
         "projectName": "Sample",
-        "projectPath": "C:\\Users\\User\\Desktop\\CLop\\Sample\\Sample.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Desktop\\CLop\\Sample\\obj\\",
+        "projectPath": "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\Sample\\Sample.csproj",
+        "packagesPath": "C:\\Users\\S.Dobranos\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\Sample\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\S.Dobranos\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -86,8 +86,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\User\\Desktop\\CLop\\ClopClustering\\ClopClustering.csproj": {
-                "projectPath": "C:\\Users\\User\\Desktop\\CLop\\ClopClustering\\ClopClustering.csproj"
+              "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\ClopClustering\\ClopClustering.csproj": {
+                "projectPath": "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\ClopClustering\\ClopClustering.csproj"
               }
             }
           }
@@ -102,7 +102,6 @@
         "netcoreapp2.1": {
           "dependencies": {
             "Microsoft.NETCore.App": {
-              "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true

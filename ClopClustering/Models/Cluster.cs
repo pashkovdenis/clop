@@ -13,18 +13,23 @@ namespace ClopClustering.Models
         public bool IsValidCluster { get;}
         public float Width { get; private set; }
         public float Height { get; private set; }
-        private ConcurrentBag<Subject<D>> Subjects { get; } 
+        public ConcurrentBag<Subject<D>> Subjects { get; } 
         public Cluster(string description)
         {
             Description = description;
             Subjects = new ConcurrentBag<Subject<D>>();
             Width = Height = 1;
         }
-
+         
         public Cluster(string description, IEnumerable<Subject<D>> subjects) : this(description)
         {
-
-
+            if (subjects != null)
+            { 
+                foreach (var subject in subjects)
+                {
+                    Subjects.Add(subject);
+                }
+            } 
         }
 
         public override string ToString() => $"Cluster {Description}";

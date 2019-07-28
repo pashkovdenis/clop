@@ -6,6 +6,6 @@ namespace ClopClustering.Interfaces
 {
     public interface IAttributeComparer
     {
-        bool Compare(ISubjectAttribute a, ISubjectAttribute b); 
+        float Compare(ISubjectAttribute a, ISubjectAttribute b); 
     }
 }

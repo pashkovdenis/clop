@@ -7,3 +7,12 @@ C:\Users\User\Desktop\CLop\ClopClustering\obj\Debug\netstandard2.0\ClopClusterin
 C:\Users\User\Desktop\CLop\ClopClustering\obj\Debug\netstandard2.0\ClopClustering.AssemblyInfo.cs
 C:\Users\User\Desktop\CLop\ClopClustering\obj\Debug\netstandard2.0\ClopClustering.dll
 C:\Users\User\Desktop\CLop\ClopClustering\obj\Debug\netstandard2.0\ClopClustering.pdb
+C:\Users\S.Dobranos\Desktop\Projects\Clop\ClopClustering\bin\Debug\netstandard2.0\ClopClustering.deps.json
+C:\Users\S.Dobranos\Desktop\Projects\Clop\ClopClustering\bin\Debug\netstandard2.0\ClopClustering.dll
+C:\Users\S.Dobranos\Desktop\Projects\Clop\ClopClustering\bin\Debug\netstandard2.0\ClopClustering.pdb
+C:\Users\S.Dobranos\Desktop\Projects\Clop\ClopClustering\obj\Debug\netstandard2.0\ClopClustering.csprojAssemblyReference.cache
+C:\Users\S.Dobranos\Desktop\Projects\Clop\ClopClustering\obj\Debug\netstandard2.0\ClopClustering.csproj.CoreCompileInputs.cache
+C:\Users\S.Dobranos\Desktop\Projects\Clop\ClopClustering\obj\Debug\netstandard2.0\ClopClustering.AssemblyInfoInputs.cache
+C:\Users\S.Dobranos\Desktop\Projects\Clop\ClopClustering\obj\Debug\netstandard2.0\ClopClustering.AssemblyInfo.cs
+C:\Users\S.Dobranos\Desktop\Projects\Clop\ClopClustering\obj\Debug\netstandard2.0\ClopClustering.dll
+C:\Users\S.Dobranos\Desktop\Projects\Clop\ClopClustering\obj\Debug\netstandard2.0\ClopClustering.pdb
