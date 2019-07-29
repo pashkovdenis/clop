@@ -35,7 +35,7 @@ namespace ClopClustering.Default
             if (data.Count() != data.Count(x => x.Attributes.Any(a => a.IsKeyAttribute)))
                 throw new InvalidOperationException("Not all data contains key attribute");
 
-            Clusters.AddRange(data.GroupBy(d => d.Attributes.First(a => a.IsKeyAttribute).Key).OrderBy(a => a.Key)
+            Clusters.AddRange(data.GroupBy(d => d.GetKey().Key).OrderBy(a => a.Key)
                              .Select(x =>
                              {
                                  var cluster = new Cluster<D>(x.Key);
@@ -63,7 +63,6 @@ namespace ClopClustering.Default
                                     selectedCluster = cluster;
                                 }
                             }
-
                         s.Assigned = true;
                         selectedCluster.InsertSubject(s);
                         RecalculateClusterDimensions(selectedCluster);
