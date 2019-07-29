@@ -1,4 +1,6 @@
-# clope clustering algorithm implementation. 
+# clope clustering algorithm implementation .NET 
+
+
 
 CLOPE: a fast and effective clustering algorithm for transactional data
 
