@@ -23,7 +23,10 @@ namespace Sample.Override
                 var attributes = entry.Select(x => new SubjectAttribute(x)).ToList();
                 var splittedGenere = SplitKey(entry[6]);
                 attributes.AddRange(splittedGenere.Select(x=>new SubjectAttribute(x)));
-                attributes.Add(new SubjectAttribute(splittedGenere[0], isKey: true));
+                var key = splittedGenere.FirstOrDefault(x => x.Length > 1 && !string.IsNullOrWhiteSpace(x)); 
+
+                attributes.Add(new SubjectAttribute(key ?? "none", isKey: true));
+
                 var subject = new Subject<string>(entry[1], attributes) ;  
                 subjects.Add(subject); 
             }

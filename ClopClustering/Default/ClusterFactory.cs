@@ -79,13 +79,11 @@ namespace ClopClustering.Default
         private double GetDelta(Cluster<D> cluster, Subject<D> subject)
         { 
             var width = cluster.Width;
-            var height = cluster.Subjects.Count + 1;
-
+            var height = cluster.Subjects.Count + 1; 
             if (!cluster.Subjects.Any(s => CompareSubjects(s, subject)))
             {
                 width += Thresshold;
-            }
-
+            } 
             return height * 2 / Math.Pow(width, 2) 
                     - cluster.Subjects.Count / Math.Pow(cluster.Width, 2);
         }
@@ -106,6 +104,8 @@ namespace ClopClustering.Default
         }
 
         #endregion
+
+
         public IEnumerator<Cluster<D>> GetEnumerator() => Clusters.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
