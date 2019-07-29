@@ -45,33 +45,29 @@ namespace ClopClustering.Default
         }
          
         public void MakeClusters()
-        {
-
-            Cluster<D> selectedCluster = Clusters.First();
+        { 
+            Cluster<D> selectedCluster = Clusters.First();  
 
             foreach ( var s in Subjects)
-            {
-                    double delta_max = -1;  
+                {  
+                        if (!s.Assigned)
+                        {
+                              double delta_max = -1;
+                                 Parallel.ForEach(Clusters, cluster =>
+                                  {
+                                      var delta = GetDelta(cluster, s); 
+                                      if (delta > delta_max)
+                                      {
+                                          delta_max = delta;
+                                          selectedCluster = cluster;
+                                      }
+                                  });
 
-                    if (!s.Assigned)
-                    {
-                        
-                        foreach (var cluster in Clusters)
-                            {
-                                var delta = GetDelta(cluster, s);
-
-                                if (delta > delta_max)
-                                {
-                                    delta_max = delta;
-                                    selectedCluster = cluster;
-                                }
-                            }
-
-                        s.Assigned = true;
-                        selectedCluster.InsertSubject(s);
-                        RecalculateClusterDimensions(selectedCluster);
-                    }
-            }  
+                            s.Assigned = true;
+                            selectedCluster.InsertSubject(s);
+                            RecalculateClusterDimensions(selectedCluster);
+                        }
+                }  
         }
 
         public IReadOnlyCollection<Cluster<D>> GetClasters() => Clusters.AsReadOnly();
