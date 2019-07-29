@@ -45,14 +45,17 @@ namespace ClopClustering.Default
         }
          
         public void MakeClusters()
-        { 
-            Parallel.ForEach(Subjects, s =>
+        {
+
+            Cluster<D> selectedCluster = Clusters.First();
+
+            foreach ( var s in Subjects)
             {
-                double delta_max = -1; 
+                    double delta_max = -1;  
 
                     if (!s.Assigned)
                     {
-                        Cluster<D> selectedCluster = Clusters.First();
+                        
                         foreach (var cluster in Clusters)
                             {
                                 var delta = GetDelta(cluster, s);
@@ -63,16 +66,18 @@ namespace ClopClustering.Default
                                     selectedCluster = cluster;
                                 }
                             }
+
                         s.Assigned = true;
                         selectedCluster.InsertSubject(s);
                         RecalculateClusterDimensions(selectedCluster);
                     }
-            });
+            }  
         }
 
         public IReadOnlyCollection<Cluster<D>> GetClasters() => Clusters.AsReadOnly();
          
         #region Calculations 
+
         private double GetDelta(Cluster<D> cluster, Subject<D> subject)
         { 
             var width = cluster.Width;
@@ -89,8 +94,7 @@ namespace ClopClustering.Default
         
         private void RecalculateClusterDimensions(Cluster<D> cluster)
         {
-            var occurencies = cluster.Subjects
-                .GroupBy(s => s.GetKey()).Select(s => (s.Key, s.Count()));
+            var occurencies = cluster.Subjects.GroupBy(s => s.GetKey()).Select(s => (s.Key, s.Count()));
             var width = occurencies.Count();
             var height = occurencies.Sum(s => s.Item2) / (float)width ;
             cluster.UpdateDimensions(width, height );
@@ -98,11 +102,12 @@ namespace ClopClustering.Default
 
         private bool CompareSubjects(Subject<D> a, Subject<D> b)
         {
-            double similarity = a.Attributes.Sum(at => b.Attributes.Sum(ba => AttributeComparer.Compare(at, ba)));  
+            double similarity = 0; 
+            similarity  += a.Attributes.Sum(at => b.Attributes.Sum(ba => AttributeComparer.Compare(at, ba)));  
             return similarity >= Thresshold * Multiplier;
         }
-        #endregion
 
+        #endregion
         public IEnumerator<Cluster<D>> GetEnumerator() => Clusters.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }

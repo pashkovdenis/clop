@@ -18,7 +18,7 @@ namespace Sample
                 var movieList = await MovieSubjectFactory
                                .ParseMoviesAsync(Path.Combine(AppContext.BaseDirectory, "movies.txt"));
                 Console.Clear();  
-                var factory = new ClusterFactory<string>(movieList, new SubjectComparer(),   6);
+                var factory = new ClusterFactory<string>(movieList, new SubjectComparer(), 10);
                 factory.MakeClusters();
 
                 foreach (var cluster in factory)
