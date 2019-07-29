@@ -9,21 +9,31 @@ namespace Sample
     internal static class Program
     { 
   
-        static async Task Main(string[] args)
+        static async Task Main()
         {
-            Console.WriteLine(" Clustering Example ");
-
             var movieList = await MovieSubjectFactory
-                                .ParseMoviesAsync(Path.Combine(AppContext.BaseDirectory, "movies.txt"));
-             
-            var factory = new ClusterFactory<string>(movieList, new SubjectComparer());
+                               .ParseMoviesAsync(Path.Combine(AppContext.BaseDirectory, "movies.txt"));
 
-            factory.MakeCLusters(); 
+            while (true)
+            {
+                Console.Clear();  
+                var factory = new ClusterFactory<string>(movieList, new SubjectComparer(),   6);
+                factory.MakeClusters();
 
+                foreach (var cluster in factory)
+                {
+                    Console.WriteLine(cluster.Description);
+                    Console.WriteLine("--------------------------------"); 
+                    foreach (var item in cluster.Subjects)
+                    {
+                        Console.WriteLine(item);
+                    } 
 
-
-
-            Console.ReadLine();
+                    Console.WriteLine("");
+                    Console.WriteLine("");
+                } 
+                Console.ReadLine();
+            }
         }
 
 

@@ -6,11 +6,13 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Collections.Concurrent;
 
 namespace ClopClustering.Default
 {
-    public sealed class ClusterFactory<D> : IClusterFactory, IEnumerable<Cluster<D>>
+    public sealed class ClusterFactory<D> : IClusterFactory<D>, IEnumerable<Cluster<D>>
     {
+        public const float Multiplier = 0.43f;
         private readonly IList<Subject<D>> Subjects;
         private readonly IAttributeComparer AttributeComparer;
         private readonly List<Cluster<D>> Clusters;
@@ -29,78 +31,81 @@ namespace ClopClustering.Default
         {
             if (data == null || !data.Any())
                 throw new InvalidOperationException("Data list is required to init factory");
+
             if (data.Count() != data.Count(x => x.Attributes.Any(a => a.IsKeyAttribute)))
                 throw new InvalidOperationException("Not all data contains key attribute");
 
-            Clusters.AddRange(data.GroupBy(d => d.Attributes.First(a => a.IsKeyAttribute).Label).OrderBy(a => a.Key)
+            Clusters.AddRange(data.GroupBy(d => d.Attributes.First(a => a.IsKeyAttribute).Key).OrderBy(a => a.Key)
                              .Select(x =>
                              {
                                  var cluster = new Cluster<D>(x.Key);
                                  cluster.InsertSubject(x.FirstOrDefault());
                                  return cluster;
-                             }));
-
+                             })); 
         }
          
-        public void MakeCLusters()
-        {
+        public void MakeClusters()
+        { 
             Parallel.ForEach(Subjects, s =>
             {
-                double delta_max = -1;
+                double delta_max = -1; 
 
-                if (!Clusters.Any(c => c.Subjects.Contains(s)))
-                {
-                    Cluster<D> selectedCluster = null;
-
-                    foreach (var cluster in Clusters)
+                    if (!s.Assigned)
                     {
-                        double delta = GetDelta( cluster, s);
+                        Cluster<D> selectedCluster = Clusters.First();
+                        foreach (var cluster in Clusters)
+                            {
+                                var delta = GetDelta(cluster, s);
 
-                        if (delta > delta_max || delta_max == -1)
-                        {
-                            delta_max = delta;
-                            selectedCluster = cluster;
-                        }
+                                if (delta > delta_max)
+                                {
+                                    delta_max = delta;
+                                    selectedCluster = cluster;
+                                }
+                            }
 
+                        s.Assigned = true;
                         selectedCluster.InsertSubject(s);
                         RecalculateClusterDimensions(selectedCluster);
                     }
-                }
             });
         }
+
+        public IReadOnlyCollection<Cluster<D>> GetClasters() => Clusters.AsReadOnly();
          
-        private double GetDelta(  Cluster<D> cluster, Subject<D> subject)
+        #region Calculations 
+
+        private double GetDelta(Cluster<D> cluster, Subject<D> subject)
         { 
-            var Width_New = cluster.Width;
-            var cluSizeNew = cluster.Subjects.Count() + 1;
+            var width = cluster.Width;
+            var height = cluster.Subjects.Count + 1;
 
             if (!cluster.Subjects.Any(s => CompareSubjects(s, subject)))
             {
-                Width_New = Width_New + 1;
+                width += Thresshold;
             }
-             
-            return cluSizeNew * 2 / Math.Pow(Width_New, 2) -
-                cluster.Subjects.Count() / Math.Pow(cluster.Width, 2);
+
+            return height * 2 / Math.Pow(width, 2) 
+                    - cluster.Subjects.Count / Math.Pow(cluster.Width, 2);
         }
-           
+        
         private void RecalculateClusterDimensions(Cluster<D> cluster)
         {
-              
-
+            var occurencies = cluster.Subjects.GroupBy(s => s.GetKey()).Select(s => (s.Key, s.Count()));
+            var width = occurencies.Count();
+            var height = occurencies.Sum(s => s.Item2) / (float)width ;
+            cluster.UpdateDimensions(width, height );
         }
-         
+
         private bool CompareSubjects(Subject<D> a, Subject<D> b)
         {
-            var similarity = 0.00; 
-            if (ReferenceEquals(a, b))
-            {
-                similarity += 0.33;
-            } 
-            similarity  += a.Attributes.Sum(at => b.Attributes.Sum(ba => AttributeComparer.Compare(at, ba))); 
-            return (similarity >= Thresshold * 0.33);
+            double similarity = 0; 
+            similarity  += a.Attributes.Sum(at => b.Attributes.Sum(ba => AttributeComparer.Compare(at, ba)));  
+            return similarity >= Thresshold * Multiplier;
         }
-         
-        public IEnumerator<Cluster<D>> GetEnumerator() => Clusters.GetEnumerator(); 
+
+        #endregion
+        public IEnumerator<Cluster<D>> GetEnumerator() => Clusters.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }

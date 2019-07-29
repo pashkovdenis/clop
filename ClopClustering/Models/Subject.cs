@@ -15,6 +15,9 @@ namespace ClopClustering.Models
         public Subject(IEnumerable<ISubjectAttribute> attributes) => Attributes = attributes;
         public Subject(D data, IEnumerable<ISubjectAttribute> attributes) => (Data, Attributes) = (data, attributes); 
         public override string ToString() => Data?.ToString() ?? "Empty Subject";
+        public ISubjectAttribute GetKey() => Attributes.FirstOrDefault(a => a.IsKeyAttribute);
+        public bool Assigned { get; set; } = false;
+
     } 
     
     

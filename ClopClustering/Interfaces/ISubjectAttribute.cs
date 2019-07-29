@@ -6,7 +6,7 @@ namespace ClopClustering.Interfaces
 {
     public interface ISubjectAttribute
     {
-        string Label { get; }
+        string Key { get; }
         bool IsKeyAttribute { get;}
         float Weight { get; }   
     }

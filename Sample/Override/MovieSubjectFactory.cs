@@ -21,7 +21,9 @@ namespace Sample.Override
             {
                 string[] entry = Regex.Split(line, "#");
                 var attributes = entry.Select(x => new SubjectAttribute(x)).ToList();
-                attributes.Add(new SubjectAttribute( SplitKey( entry[6]), isKey: true));
+                var splittedGenere = SplitKey(entry[6]);
+                attributes.AddRange(splittedGenere.Select(x=>new SubjectAttribute(x)));
+                attributes.Add(new SubjectAttribute(splittedGenere[0], isKey: true));
                 var subject = new Subject<string>(entry[1], attributes) ;  
                 subjects.Add(subject); 
             }
@@ -29,10 +31,10 @@ namespace Sample.Override
             return subjects.AsReadOnly();
         }
 
-        private static string SplitKey (string key)
+        private static string[] SplitKey (string key)
         {
             var str = key.Split(new string[] { ".", ",", " ", "-", ";", ":" }, StringSplitOptions.RemoveEmptyEntries);
-            return str[0];
+            return str;
         }
          
     }

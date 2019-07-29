@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\Sample\\Sample.csproj": {}
+    "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\Sample\\Sample.csproj": {}
   },
   "projects": {
-    "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\ClopClustering\\ClopClustering.csproj": {
+    "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\ClopClustering\\ClopClustering.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\ClopClustering\\ClopClustering.csproj",
+        "projectUniqueName": "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\ClopClustering\\ClopClustering.csproj",
         "projectName": "ClopClustering",
-        "projectPath": "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\ClopClustering\\ClopClustering.csproj",
-        "packagesPath": "C:\\Users\\S.Dobranos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\ClopClustering\\obj\\",
+        "projectPath": "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\ClopClustering\\ClopClustering.csproj",
+        "packagesPath": "C:\\Users\\Denis_Pashkov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\ClopClustering\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\S.Dobranos\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Denis_Pashkov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
@@ -58,23 +56,21 @@
         }
       }
     },
-    "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\Sample\\Sample.csproj": {
+    "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\Sample\\Sample.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\Sample\\Sample.csproj",
+        "projectUniqueName": "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\Sample\\Sample.csproj",
         "projectName": "Sample",
-        "projectPath": "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\Sample\\Sample.csproj",
-        "packagesPath": "C:\\Users\\S.Dobranos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\Sample\\obj\\",
+        "projectPath": "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\Sample\\Sample.csproj",
+        "packagesPath": "C:\\Users\\Denis_Pashkov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\Sample\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\S.Dobranos\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Denis_Pashkov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.1"
@@ -86,8 +82,8 @@
         "frameworks": {
           "netcoreapp2.1": {
             "projectReferences": {
-              "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\ClopClustering\\ClopClustering.csproj": {
-                "projectPath": "C:\\Users\\S.Dobranos\\Desktop\\Projects\\Clop\\ClopClustering\\ClopClustering.csproj"
+              "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\ClopClustering\\ClopClustering.csproj": {
+                "projectPath": "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\ClopClustering\\ClopClustering.csproj"
               }
             }
           }

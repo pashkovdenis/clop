@@ -19,8 +19,7 @@ namespace ClopClustering.Models
             Description = description;
             Subjects = new ConcurrentBag<Subject<D>>();
             Width = Height = 1;
-        }
-         
+        } 
         public Cluster(string description, IEnumerable<Subject<D>> subjects) : this(description)
         {
             if (subjects != null)
@@ -35,7 +34,10 @@ namespace ClopClustering.Models
         public override string ToString() => $"Cluster {Description}";
         public IEnumerator<Subject<D>> GetEnumerator() => Subjects.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator(); 
-        public void InsertSubject(Subject<D> subject) => Subjects.Add(subject);
+        public void InsertSubject(Subject<D> subject)
+        {
+            Subjects.Add(subject); 
+        }
         public void UpdateDimensions(float width, float height) => (Width, Height) = (width, height);
     } 
 
