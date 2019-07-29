@@ -46,28 +46,30 @@ namespace ClopClustering.Default
          
         public void MakeClusters()
         { 
-            Cluster<D> selectedCluster = Clusters.First();  
-
-            foreach ( var s in Subjects)
-                {  
-                        if (!s.Assigned)
+            Parallel.ForEach(Subjects, s =>
+            {
+                double delta_max = -1;
+                 
+                    if (!s.Assigned)
+                    {
+                        Cluster<D> selectedCluster = Clusters.First();
+                        foreach (var cluster in Clusters)
                         {
-                              double delta_max = -1;
-                                 Parallel.ForEach(Clusters, cluster =>
-                                  {
-                                      var delta = GetDelta(cluster, s); 
-                                      if (delta > delta_max)
-                                      {
-                                          delta_max = delta;
-                                          selectedCluster = cluster;
-                                      }
-                                  });
+                            var delta = GetDelta(cluster, s);
 
-                            s.Assigned = true;
-                            selectedCluster.InsertSubject(s);
-                            RecalculateClusterDimensions(selectedCluster);
+                            if (delta > delta_max)
+                            {
+                                delta_max = delta;
+                                selectedCluster = cluster;
+                            }
                         }
-                }  
+
+                        s.Assigned = true;
+                        selectedCluster.InsertSubject(s);
+                        RecalculateClusterDimensions(selectedCluster);
+                    }
+               
+            });
         }
 
         public IReadOnlyCollection<Cluster<D>> GetClasters() => Clusters.AsReadOnly();
