@@ -1,18 +1,15 @@
-﻿using ClopClustering.Interfaces;
-
-namespace ClopClustering.Default.Attributes
+﻿namespace ClopClustering.Default.Attributes
 {
-    public sealed class SubjectAttribute : ISubjectAttribute
+    public readonly struct SubjectAttribute
     {
         public SubjectAttribute(string value, float weight = 0.33f, bool isKey = false)
           => (Key, Weight, IsKeyAttribute) = (value, weight, isKey);  
-        public bool IsKeyAttribute { get; private set; }
+        public bool IsKeyAttribute { get;  }
 
-        public float Weight { get; private set; }
+        public float Weight { get;  }
 
-        public string Key { get; private set; }
+        public string Key { get; }
 
         public override string ToString() => Key;
     }
-     
 }

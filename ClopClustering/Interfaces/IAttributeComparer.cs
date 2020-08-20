@@ -1,7 +1,9 @@
-﻿namespace ClopClustering.Interfaces
+﻿using ClopClustering.Default.Attributes;
+
+namespace ClopClustering.Interfaces
 {
     public interface IAttributeComparer
     {
-        float Compare(ISubjectAttribute a, ISubjectAttribute b); 
+        float Compare(SubjectAttribute a, SubjectAttribute b); 
     }
 }

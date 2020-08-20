@@ -19,17 +19,19 @@ namespace Sample.Override
             foreach (var line in lines )
             {
                 string[] entry = Regex.Split(line, "#");
+
                 var attributes = entry.Select(x => new SubjectAttribute(x)).ToList();
+
                 var splittedGenere = SplitKey(entry[6]);
                 attributes.AddRange(splittedGenere.Select(x=>new SubjectAttribute(x)));
                 var key = splittedGenere.FirstOrDefault(x => x.Length > 1 && !string.IsNullOrWhiteSpace(x)); 
 
                 attributes.Add(new SubjectAttribute(key ?? "none", isKey: true));
+                
+                var subject = new Subject<string>(entry[1], attributes);  
 
-                var subject = new Subject<string>(entry[1], attributes) ;  
                 subjects.Add(subject); 
             }
-             
             return subjects.AsReadOnly();
         }
 
