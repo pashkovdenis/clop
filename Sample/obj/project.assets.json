@@ -705,23 +705,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Denis_Pashkov\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\pashk\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\Sample\\Sample.csproj",
+      "projectUniqueName": "C:\\Users\\pashk\\Desktop\\clop\\clop\\Sample\\Sample.csproj",
       "projectName": "Sample",
-      "projectPath": "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\Sample\\Sample.csproj",
-      "packagesPath": "C:\\Users\\Denis_Pashkov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\Sample\\obj\\",
+      "projectPath": "C:\\Users\\pashk\\Desktop\\clop\\clop\\Sample\\Sample.csproj",
+      "packagesPath": "C:\\Users\\pashk\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pashk\\Desktop\\clop\\clop\\Sample\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Denis_Pashkov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pashk\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -734,8 +730,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\ClopClustering\\ClopClustering.csproj": {
-              "projectPath": "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\ClopClustering\\ClopClustering.csproj"
+            "C:\\Users\\pashk\\Desktop\\clop\\clop\\ClopClustering\\ClopClustering.csproj": {
+              "projectPath": "C:\\Users\\pashk\\Desktop\\clop\\clop\\ClopClustering\\ClopClustering.csproj"
             }
           }
         }
@@ -750,16 +746,23 @@
       "netcoreapp2.1": {
         "dependencies": {
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

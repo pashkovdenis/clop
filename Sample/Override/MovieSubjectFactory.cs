@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
@@ -36,7 +35,7 @@ namespace Sample.Override
 
         private static string[] SplitKey (string key)
         {
-            var str = key.Split(new string[] { ".", ",", " ", "-", ";", ":" }, StringSplitOptions.RemoveEmptyEntries);
+            var str = key.Split(new[] { ".", ",", " ", "-", ";", ":" }, StringSplitOptions.RemoveEmptyEntries);
             return str;
         }
          

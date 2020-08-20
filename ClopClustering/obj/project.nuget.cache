@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "y8SFVbFmCF/S5JVV78NJLSbL8Tyi0ybznNwweoMU3besdzLmuDkn5vYSQmoUD1MOpzoEASbJwPaiB6LJxB20Ww==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\pashk\\Desktop\\clop\\clop\\ClopClustering\\ClopClustering.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pashk\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\pashk\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

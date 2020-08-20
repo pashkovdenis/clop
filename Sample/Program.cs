@@ -7,15 +7,10 @@ using System.Threading.Tasks;
 namespace Sample
 {
     internal static class Program
-    { 
-  
+    {
         static async Task Main()
         {
-         
-
-            while (true)
-            {
-                var movieList = await MovieSubjectFactory
+            var movieList = await MovieSubjectFactory
                                .ParseMoviesAsync(Path.Combine(AppContext.BaseDirectory, "movies.txt"));
                 Console.Clear();  
                 var factory = new ClusterFactory<string>(movieList, new SubjectComparer(), 10);
@@ -34,10 +29,7 @@ namespace Sample
                     Console.WriteLine("");
                 } 
                 Console.ReadLine();
-            }
+           
         }
-
-
-
     }
 }

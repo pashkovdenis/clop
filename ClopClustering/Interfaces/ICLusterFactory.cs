@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace ClopClustering.Interfaces
 {
-    public interface IClusterFactory<D>
+    public interface IClusterFactory<TD>
     {
-        IReadOnlyCollection<Models.Cluster<D>> GetClasters();
-        IEnumerator<Models.Cluster<D>> GetEnumerator();
+        IReadOnlyCollection<Models.Cluster<TD>> GetClusters();
+        IEnumerator<Models.Cluster<TD>> GetEnumerator();
         void MakeClusters();
     }
 

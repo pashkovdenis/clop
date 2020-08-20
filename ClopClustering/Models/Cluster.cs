@@ -1,26 +1,23 @@
-﻿using ClopClustering.Interfaces;
-using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ClopClustering.Models
 {
-    public sealed class Cluster<D>: IEnumerable<Subject<D>> 
+    public sealed class Cluster<TD>: IEnumerable<Subject<TD>> 
     {
-        public string Description { get; private set; } 
-        public bool IsValidCluster { get;}
+        public string Description { get; private set; }
         public float Width { get; private set; }
-        public float Height { get; private set; }
-        public ConcurrentBag<Subject<D>> Subjects { get; } 
+        public float Height { get; set; }
+
+        public ConcurrentBag<Subject<TD>> Subjects { get; } 
         public Cluster(string description)
         {
             Description = description;
-            Subjects = new ConcurrentBag<Subject<D>>();
+            Subjects = new ConcurrentBag<Subject<TD>>();
             Width = Height = 1;
         } 
-        public Cluster(string description, IEnumerable<Subject<D>> subjects) : this(description)
+        public Cluster(string description, IEnumerable<Subject<TD>> subjects) : this(description)
         {
             if (subjects != null)
             { 
@@ -32,9 +29,9 @@ namespace ClopClustering.Models
         }
 
         public override string ToString() => $"Cluster {Description}";
-        public IEnumerator<Subject<D>> GetEnumerator() => Subjects.GetEnumerator();
+        public IEnumerator<Subject<TD>> GetEnumerator() => Subjects.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator(); 
-        public void InsertSubject(Subject<D> subject)
+        public void InsertSubject(Subject<TD> subject)
         {
             Subjects.Add(subject); 
         }

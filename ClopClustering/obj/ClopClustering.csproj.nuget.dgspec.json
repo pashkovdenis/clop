@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\ClopClustering\\ClopClustering.csproj": {}
+    "C:\\Users\\pashk\\Desktop\\clop\\clop\\ClopClustering\\ClopClustering.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\ClopClustering\\ClopClustering.csproj": {
+    "C:\\Users\\pashk\\Desktop\\clop\\clop\\ClopClustering\\ClopClustering.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\ClopClustering\\ClopClustering.csproj",
+        "projectUniqueName": "C:\\Users\\pashk\\Desktop\\clop\\clop\\ClopClustering\\ClopClustering.csproj",
         "projectName": "ClopClustering",
-        "projectPath": "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\ClopClustering\\ClopClustering.csproj",
-        "packagesPath": "C:\\Users\\Denis_Pashkov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Denis_Pashkov\\Desktop\\Clop\\ClopClustering\\obj\\",
+        "projectPath": "C:\\Users\\pashk\\Desktop\\clop\\clop\\ClopClustering\\ClopClustering.csproj",
+        "packagesPath": "C:\\Users\\pashk\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pashk\\Desktop\\clop\\clop\\ClopClustering\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Denis_Pashkov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pashk\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,10 +46,16 @@
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

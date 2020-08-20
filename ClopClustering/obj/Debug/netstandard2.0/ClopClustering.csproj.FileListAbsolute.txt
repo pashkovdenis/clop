@@ -25,3 +25,12 @@ C:\Users\Denis_Pashkov\Desktop\Clop\ClopClustering\obj\Debug\netstandard2.0\Clop
 C:\Users\Denis_Pashkov\Desktop\Clop\ClopClustering\obj\Debug\netstandard2.0\ClopClustering.dll
 C:\Users\Denis_Pashkov\Desktop\Clop\ClopClustering\obj\Debug\netstandard2.0\ClopClustering.pdb
 C:\Users\Denis_Pashkov\Desktop\Clop\ClopClustering\obj\Debug\netstandard2.0\ClopClustering.csprojAssemblyReference.cache
+C:\Users\pashk\Desktop\clop\clop\ClopClustering\bin\Debug\netstandard2.0\ClopClustering.deps.json
+C:\Users\pashk\Desktop\clop\clop\ClopClustering\bin\Debug\netstandard2.0\ClopClustering.dll
+C:\Users\pashk\Desktop\clop\clop\ClopClustering\bin\Debug\netstandard2.0\ClopClustering.pdb
+C:\Users\pashk\Desktop\clop\clop\ClopClustering\obj\Debug\netstandard2.0\ClopClustering.csprojAssemblyReference.cache
+C:\Users\pashk\Desktop\clop\clop\ClopClustering\obj\Debug\netstandard2.0\ClopClustering.AssemblyInfoInputs.cache
+C:\Users\pashk\Desktop\clop\clop\ClopClustering\obj\Debug\netstandard2.0\ClopClustering.AssemblyInfo.cs
+C:\Users\pashk\Desktop\clop\clop\ClopClustering\obj\Debug\netstandard2.0\ClopClustering.csproj.CoreCompileInputs.cache
+C:\Users\pashk\Desktop\clop\clop\ClopClustering\obj\Debug\netstandard2.0\ClopClustering.dll
+C:\Users\pashk\Desktop\clop\clop\ClopClustering\obj\Debug\netstandard2.0\ClopClustering.pdb
